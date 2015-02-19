@@ -1,0 +1,45 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+
+#Our_Team {
+	text-align: center;
+	background-color: white;
+	width: 100%;
+}
+
+.image {
+	width: 75px;
+	height: 75px;
+	border-radius: 300px;
+	background: url(Elvis.jpg) no-repeat;
+	background-position: 75% 20%;
+
+	}
+
+#Creators {
+	display: inline-block;
+	width: 100%;
+	margin: auto auto;
+}
+
+#circle_image {
+	float: left;
+	text-align: center;
+	padding-left: 2%;
+	
+}
+
+img {
+ 	border-radius: 50%;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+}
+
+#App_Focus {
+	text-align: center;
+	background-color: white;
+	width: 100%;
+}

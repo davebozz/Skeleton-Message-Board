@@ -1,0 +1,27 @@
+table, tr, td {
+	border: 1px solid black;
+}
+
+table#topics_table {
+	width: 75%;
+	text-align: center;
+	border: 2px black;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#topics_table td {
+	text-align: center;
+}
+
+#login {
+	position: relative;
+	margin: 20px auto;
+}
+
+.ui-block-b a, .ui-block-b:link {
+	text-decoration: none;
+	color: white;
+
+}
