@@ -1,1 +1,6 @@
-This is a test for git
+Github command:
+
+git add .
+git commit -m "text"
+git push
+git status
