@@ -1,9 +1,24 @@
-Github command:
+Github Source Control Basics
+type "git" to get all commands & what they do.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+=---------------------=
+Adding Files To Repository Use Commands Below: 
+=---------------------=
+git clone url		//==-Pulls any repository in using its url
+git add . 		//==-This adds all files, to add a single file: (git add filename.extension) <--Everything in your directory or (git -A) <-- which adds all files 
+git commit -m "text"    //==-This command commits it to the repository, -m means message and " enter message here", commited but still on machine
+git push		//==- This command pushes all files that were commited to the repository @ github .com 
+git status		//==- This command checks to see what files are different between your local github init and the repository
+			    -Untracked file: Created files, but github doesn't know the file exists
+			    -Changed to be commited: Commit file
+			    -Modified File: files that you've made changes to but haven't (added/etc...)
+		 
+=--------------------=
+Getting Files From Repository Use Commands Below
+=--------------------=
+git pull	      //==-Pull's any files down from github repository(Must be in directory of github repository)
+			--IF returns Already up-to-date, means that there are not any changes
+=-------------------=
+Merge conflict: When you have made a change to a line that someone else has made a change on(When git pull will udpate)
 
-git add .
-git commit -m "text"
-git push
-git status
-
-IT WORKED!
-
+--------------------------------------------------------------------------------------------------------------------------------------------------
