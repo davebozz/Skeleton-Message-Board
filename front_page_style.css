@@ -25,3 +25,8 @@ table#topics_table {
 	color: white;
 
 }
+
+div.EnterError {
+	display: none;
+	color: red;
+}

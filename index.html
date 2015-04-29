@@ -14,6 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="front_page_style.css"/>
 		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery-1.11.2.js"> </script>
 		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery.mobile-1.4.5.js"> </script>
+		<script type="text/javascript" src="login.js"></script>
 	</head>
 
 	<body>
@@ -29,7 +30,9 @@
 							<a href="info.html"> Info </a>
 						</li>
 						<li>
-							<a href="#Login" class="ui-btn ui-btn-inline" data-transition="pop"> Login </a>
+							<a href="#Login" class="ui-btn ui-btn-inline" data-transition="pop">
+								Login 
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -121,17 +124,34 @@
 					Don't have an account? </br>Feel free to create one 
 						<a href="#homePage">here</a>! 
 				</p>
-				<form action="form.php" method="POST">
+				
+				<form action="#" method="POST" data-ajax="false" name="login" id="login">
+					
+				<div data-role="fieldcontain">
 					<label for="Username"> 
 						Username:
 					</label>
-					<input type="text" name="Usernamename" id="Username" data-mini="true"/>
+					<input type="text" name="Username" id="Username" data-mini="true"/>
+					
+					<!--
+					Adding a alert box that is more subtle JS CALL -->
+					<div class="EnterError"> 
+						Please enter your email.
+					</div>
+				</div>
 
-					<label for="Password"> 
+				<div data-role="fieldcontain">
+					<label for="UserPassword"> 
 						Password:
 					</label>
-					<input type="password" name="Password" id="Password" data-mini="true"/>
-
+					<input type="password" name="UserPassword" id="UserPassword" data-mini="true"/>
+					<!--
+					Adding a alert box that is more subtle JS CALL -->
+					<div class="EnterError"> 
+						Please enter your Password. 
+					</div>
+				</div>
+					
 					<label for="Stay-Logged-In">Check To Stay Logged In</label>
 					<input type="checkbox" name="Stay-Logged-In" id="Stay-Logged-In" />
 				
@@ -140,7 +160,9 @@
 							<div class="ui-btn ui-btn-a ui-shadow ui-btn-corner-all ui-submit">
 								<a href="#" >
 									<span class="ui-btn-inner ui-btn-corner-all">
-										<span class="ui-btn-text">Submit</span>
+										<span class="ui-btn-text" onclick="LoginForm(document.login);">
+											Submit
+										</span>
 									</span>
 								</a>
 							</div>
