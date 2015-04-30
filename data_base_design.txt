@@ -1,0 +1,29 @@
+======--------------------======
+Database Design
+======--------------------======
+   -Table: Users---
+	   |
+ 	   |
+	   |-ID: Auto Incremented
+	   |
+  	   |-First_Name
+	   |
+	   |-Last_Name
+	   |
+ 	   |-Username
+	   |
+	   |-Email
+	   |
+	   |-Password(This should be a hash key)!FIX!!
+
+
+   -Table: Topic
+	   |
+           |
+	   |-Topic_ID: Auto Incremented
+           |
+	   |-Title
+  	   |
+	   |-Text
+	   |
+	   |-UserID --should be linked to the User's Table.
