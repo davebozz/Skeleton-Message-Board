@@ -40,7 +40,7 @@
 			logMsg($encode);
 			echo $encode;
 		} else {
-			
+
 			//Get my row and compare
 			$myrow = $result->fetch_array();
 
@@ -58,8 +58,6 @@
 
 				//Begin Session Variables
 				$_SESSION['User_Name']=$User_Name; //Initalizing the UserName
-				$_SESSION['User_First']=$First_Name; //Initializing the First Name
-				$_SESSION['User_Last']=$Last_Name; //Intializing the Last Name
 
 				$message = array("type"=>"Logged_In","First_Name"=>$First_Name,
 									"Last_Name"=>$Last_Name);
