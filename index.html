@@ -18,6 +18,10 @@
 	</head>
 
 	<body>
+		
+	<!--
+		======- - - - Body Starts Here - - - -=======
+	-->
 		<div data-role="page" id="homePage" class="inactive">
 			<div data-role="header" data-position="fixed">
 				<h1>Welcome To The Basic Message Board</h1>
@@ -37,7 +41,18 @@
 				</div>
 			</div>
 			<div data-role="content">
-				<h2>Click On One Of The Discussion Tabs To Read More!</h2>
+				<h2 align="center">
+					Click On One Of The Discussion Tabs To Read More!
+				</h2>
+				
+				<a href="SubmitTopic.html" id="SubmitBtn" class="ui-btn ui-btn-inline"> 
+					Submit Topic
+				</a>
+				
+	<!--
+		======- - - - Topics Added Here - - - -=======
+	  	  - - - This Is Done Via JS Injection - - -
+	-->
 				<div>
 					<ul data-role="listview" data-split-icon="gear" data-split-theme="d" class="ui-listview">
 						<li data-theme="c" class="ui-btn ui-btn-up-c ui-li ui-li-has-alt ui-li-has-thumb ui-btn-up-c">
@@ -110,6 +125,11 @@
 
 			</div>
 		</div>
+
+	<!--
+		======- - - - Dialog Login Box Starts - - - -=======
+			  - - - text text text text text - - - 
+	-->
 		<div id="Login" data-role="dialog" class="ui-btn-contain ui-overlay-a ui-corner-all ui-dialog">
 			<div data-role="header">
 				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" data-rel="back"> Close </a>
@@ -122,6 +142,10 @@
 						<a href="#homePage">here</a>! 
 				</p>
 				
+	<!--
+		======- - - - Using Form Tags To Send - - - -=======
+			  	   - - - OnClick & OnSubmit - - - 
+	-->
 				<form action="#" method="POST" data-ajax="false" name="login" id="login">
 					
 				<div data-role="fieldcontain">

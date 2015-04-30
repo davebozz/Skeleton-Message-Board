@@ -29,7 +29,7 @@ function LoginForm(form)
 	{
 		$.post(
 			'php/login.php',
-			{"User_Name":UserName.value, "User_Pass":UserPassword.value},
+			{"User_Name":form.UserName.value, "User_Pass":form.UserPassword.value},
 			function(resData){
 				jsonResData = $.parseJSON(resData);
 
