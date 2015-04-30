@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	//Begin the session-->
-	require("../include/utility.php");
+	require("../../include/utility.php");
 	$dbconn = connectToDB();
 
 	/*

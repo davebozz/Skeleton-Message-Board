@@ -9,17 +9,19 @@
 <html>
 	<head>
 		<title> Home Page </title>
-		<link rel="stylesheet" href="/~dbozentka/csc2210/include/jquery/jquery.mobile-1.4.5.css"/>
-		<link rel="stylesheet" type="text/css" href="front_page_style.css"/>
-		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery-1.11.2.js"> </script>
-		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery.mobile-1.4.5.js"> </script>
-		<script type="text/javascript" src="login.js"></script>
+		<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
+		<link rel="stylesheet" type="text/css" href="css/front_page_style.css"/>
+		<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
+		<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/logout.js"></script>
 	</head>
 
 	<body>
 		<div data-role="page" id="homePage" class="inactive">
 			<div data-role="header" data-position="fixed">
 				<h1>Welcome To The Basic Message Board</h1>
+				<a href="#" id="Logged" class="ui-btn ui-btn-inline ui-btn-right"></a>
 				<div data-role="navbar">
 					<ul>
 						<li>
@@ -28,17 +30,14 @@
 						<li>
 							<a href="info.html"> Info </a>
 						</li>
-						<li>
-							<a href="#Login" class="ui-btn ui-btn-inline" data-transition="pop">
-								Login 
-							</a>
+						
+						<li id="Log">
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div data-role="content">
 				<h2>Click On One Of The Discussion Tabs To Read More!</h2>
-				<form action="hello.php" method="POST">
 				<div>
 					<ul data-role="listview" data-split-icon="gear" data-split-theme="d" class="ui-listview">
 						<li data-theme="c" class="ui-btn ui-btn-up-c ui-li ui-li-has-alt ui-li-has-thumb ui-btn-up-c">
@@ -106,7 +105,6 @@
 						</li>	
 					</ul>
 				</div>
-				</form>
 			</div>
 			<div data-role="footer">
 

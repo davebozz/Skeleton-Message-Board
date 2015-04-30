@@ -33,6 +33,21 @@ div#PassError {
 	float:left;
 }
 
+
+/*
+	--HTML Injection for #LoggedIn 
+	--Will be colored and displayed in top right corner
+	---Change text/element tags via JS Login.JS file in 
+		returnNames(First,Last) function.
+*/
+#Logged {
+	display:none;
+}
+
+#LoggedIn {
+	color: green;
+}
+
 /*
 	Styling for Dialog Box 
 	in order for it to fit the page

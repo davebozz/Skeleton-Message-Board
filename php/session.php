@@ -1,5 +1,5 @@
 <?php
-	require("../include/utility.php");
+	require("../../include/utility.php");
 /*
 	Fetch all data from the session of the user 
 */
