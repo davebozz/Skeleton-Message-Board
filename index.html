@@ -9,7 +9,6 @@
 <html>
 	<head>
 		<title> Home Page </title>
-		<meta name="viewport" content="width=device-width, intial-scale=1"/>
 		<link rel="stylesheet" href="/~dbozentka/csc2210/include/jquery/jquery.mobile-1.4.5.css"/>
 		<link rel="stylesheet" type="text/css" href="front_page_style.css"/>
 		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery-1.11.2.js"> </script>
@@ -18,7 +17,7 @@
 	</head>
 
 	<body>
-		<div data-role="page" id="homePage">
+		<div data-role="page" id="homePage" class="inactive">
 			<div data-role="header" data-position="fixed">
 				<h1>Welcome To The Basic Message Board</h1>
 				<div data-role="navbar">
@@ -113,7 +112,7 @@
 
 			</div>
 		</div>
-		<div data-role="dialog" id="Login" class=" ui-btn-contain ui-overlay-shadow ui-corner-all">
+		<div id="Login" data-role="dialog" class="ui-btn-contain ui-overlay-a ui-corner-all ui-dialog">
 			<div data-role="header">
 				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" data-rel="back"> Close </a>
 				<h1 class="ui-title" data-role="heading">Login Form</h1>
@@ -128,16 +127,16 @@
 				<form action="#" method="POST" data-ajax="false" name="login" id="login">
 					
 				<div data-role="fieldcontain">
-					<label for="Username"> 
+					<label for="UserName"> 
 						Username:
 					</label>
-					<input type="text" name="Username" id="Username" data-mini="true"/>
+					<input type="text" name="UserName" id="UserName" data-mini="true"/>
 					
 					<!--
-					Adding a alert box that is more subtle JS CALL -->
-					<div class="EnterError"> 
-						Please enter your email.
-					</div>
+						-Adding a alert box that is more subtle JS CALL 
+						-It will add text based on message
+					-->
+					<div id="UserError"> </div>
 				</div>
 
 				<div data-role="fieldcontain">
@@ -146,10 +145,10 @@
 					</label>
 					<input type="password" name="UserPassword" id="UserPassword" data-mini="true"/>
 					<!--
-					Adding a alert box that is more subtle JS CALL -->
-					<div class="EnterError"> 
-						Please enter your Password. 
-					</div>
+						-Adding a alert box that is more subtle JS CALL 
+						-It will add text based on message
+					-->
+					<div id="PassError"> </div>
 				</div>
 					
 					<label for="Stay-Logged-In">Check To Stay Logged In</label>
@@ -160,7 +159,7 @@
 							<div class="ui-btn ui-btn-a ui-shadow ui-btn-corner-all ui-submit">
 								<a href="#" >
 									<span class="ui-btn-inner ui-btn-corner-all">
-										<span class="ui-btn-text" onclick="LoginForm(document.login);">
+										<span id="SubmitBtn" class="ui-btn-text" onclick="LoginForm(document.login);">
 											Submit
 										</span>
 									</span>

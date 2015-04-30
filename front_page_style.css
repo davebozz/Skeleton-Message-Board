@@ -26,7 +26,28 @@ table#topics_table {
 
 }
 
-div.EnterError {
-	display: none;
+div#UserError,
+div#PassError {
 	color: red;
+	font-size: 30%;
+	float:left;
+}
+
+/*
+	Styling for Dialog Box 
+	in order for it to fit the page
+	Note to Self: Fix issue with Navigation Bar Not Darkening
+*/
+.inactive {
+	display: block !important;
+}
+
+
+.ui-dialog {
+	 background-color: rgba(34,34,34,0.5) !important;
+}
+
+.ui-dialog.ui-overlay-a 
+{
+    background-image: none;
 }
