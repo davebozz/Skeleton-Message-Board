@@ -1,6 +1,6 @@
-$(function(){
-	$("#Log").html("<a href='#Login' class='ui-btn ui-btn-inline' data-transition='pop'>Login</a>");
- });
+var First= "";
+var Last= "";
+
 function LoginForm(form)
 {
 	//Check to see if UserName was entered appropriate
@@ -23,13 +23,18 @@ function LoginForm(form)
 		$('#PassError').text(errorText);
 	}
 
+	var UserPassword = form.UserPassword.value;
+	var UserName = form.UserName.value;
+	console.log("User Password: "+UserPassword);
+	console.log("User Name: "+UserName);
+
 	//=-If The UserName & Password are filled,
 	//=-Send both of them to the database
 	if(form.UserPassword.value!="" && form.UserName.value !="")
 	{
 		$.post(
 			'php/login.php',
-			{"User_Name":form.UserName.value, "User_Pass":form.UserPassword.value},
+			{"User_Name":UserName, "User_Pass":UserPassword},
 			function(resData){
 				jsonResData = $.parseJSON(resData);
 
@@ -37,7 +42,8 @@ function LoginForm(form)
 				console.log(jsonResData);
 				console.log(jsonResData.type);
 
-				if(jsonResData.type == "No_User"){
+				if(jsonResData.type=="No_User")
+				{
 					var errorText = "No Username, Please Rework or Register Above.";
 					$('#UserError').text(errorText);
 					form.UserName.value="";
@@ -46,14 +52,16 @@ function LoginForm(form)
 					form.UserPassword.focus();
 				}
 
-				if(jsonResData.type == "Bad_Pass"){
+				if(jsonResData.type=="Bad_Pass")
+				{
 					var errorText = "Incorrect Password, try again.";
 					$('#PassError').text(errorText);
 					form.UserPassword.value="";
 					form.UserPassword.focus();
 				}
 
-				if(jsonResData.type == "Logged_In"){
+				if(jsonResData.type=="Logged_In")
+				{
 					var First_Name = jsonResData.First_Name;
 					var Last_Name = jsonResData.Last_Name;
 
@@ -72,15 +80,43 @@ function LoginForm(form)
 					//Function to display names to the screen
 					returnNames(First_Name,Last_Name);
 				}
-
 		});
-
 	}
 }
 
-function returnNames(First, Last){
+function Session_Check()
+{
+	$.post(
+		'php/session.php',
+		function(resData){
+			jsonResData = $.parseJSON(resData);
+
+			console.log(jsonResData);
+			console.log(jsonResData.type);
+	
+			if(jsonResData.type == "Session_Active")
+			{
+				var First = jsonResData.First_Name;
+				var Last = jsonResData.Last_Name;
+			
+				console.log(First);
+				console.log(Last);
+
+				returnNames(First, Last);
+			}
+
+			if(jsonResData.type == "Session_Not_Active")
+			{
+				$("#Log").html("<a href='#Login' class='ui-btn ui-btn-inline' data-ajax='false' data-transition='pop'>Login</a>");
+				$("#Logged").hide();
+			}
+		});
+}
+
+function returnNames(First, Last)
+{
 	//Hide the Login & Show the Logout
-	$("#Log").html("<a href='#' class='ui-btn ui-btn-inline' data-transition='pop' onclick='logout();'>Log Out</a>");
+	$("#Log").html("<a href='#' class='ui-btn ui-btn-inline' data-ajax='false' data-transition='pop' onclick='logout();'>Log Out</a>");
 
 	/*
 		=-Display a bar in the upper right hand corner

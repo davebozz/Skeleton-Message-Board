@@ -31,15 +31,12 @@ function SubmitForm(form){
 				var errorText = "You are not logged in, please login!";
 				$('#TitleError').text(errorText);
 				//Double check to see if this works
-				document.location.href = 'index.html#dialog'
 			}
 
 			if(jsonResData.type == "Success_Send"){
 				console.log("Stored in DB!");
 				//Return to the homepage 
 				// or should it go to comments?
-				document.location.href = 'index.html';
-
 			}
 
 		});
@@ -54,22 +51,19 @@ function SubmitForm(form){
 				jsonResData = $.parseJSON(resData);
 
 				console.log(jsonResData);
-				console.log(jsonResData.value);
 
 				if(jsonResData.type == "Not_Logged_In")
 				{
 					var errorText = "You are not logged in, please login!";
 					$('#TitleError').text(errorText);
 					//Double check to see if this works
-					document.location.href = 'index.html#dialog'
 				}
 
 				if(jsonResData.type == "Success_Send")
 				{
-					console.log("Stored in DB!");
-					//Return to the homepage 
-					// or should it go to comments?
-					document.location.href = 'index.html';
+					var First_Name = jsonResData.First_Name;
+					var Last_Name = jsonResData.Last_Name;
+					document.location.href="index.html"
 				}
 		});
 	}

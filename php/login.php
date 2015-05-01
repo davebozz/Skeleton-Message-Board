@@ -1,9 +1,8 @@
 <?php
-	session_start();
-	//Begin the session-->
-	require("../../include/utility.php");
+require("../../include/utility.php");
 	$dbconn = connectToDB();
-
+	session_start();
+	$_SESSION['User_Name'];
 	/*
 		-Turn this into a function after working.
 		-Clean it up: Could be much more fluid.
@@ -13,7 +12,6 @@
 	{
 		$User_Name = cleanInput($_POST['User_Name']);
 		$User_Pass = cleanInput($_POST['User_Pass']);
-
 		//Protect against MySQL Injection
 		$User_Name = $dbconn->real_escape_string($User_Name);
 		$User_Pass = $dbconn->real_escape_string($User_Pass);
@@ -27,7 +25,7 @@
 		//Remove after debug
 		logMsg($query);
 
-		if((!$result = $dbconn->query($query)))
+		if(!($result = $dbconn->query($query)))
 		{
 			logMsg("Bad Query");
 		}
@@ -56,11 +54,12 @@
 				$First_Name = $myrow['First_Name'];
 				$Last_Name = $myrow['Last_Name'];
 
-				//Begin Session Variables
+				//Begin Session Variables && Set Cookies
 				$_SESSION['User_Name']=$User_Name; //Initalizing the UserName
+				$_SESSION['First_Name']=$First_Name;
+				$_SESSION['Last_Name']=$Last_Name;
 
-				$message = array("type"=>"Logged_In","First_Name"=>$First_Name,
-									"Last_Name"=>$Last_Name);
+				$message = array("type"=>"Logged_In","First_Name"=>$First_Name, "Last_Name"=>$Last_Name);
 				$encode = json_encode($message);
 				logMsg($encode);
 				echo $encode;

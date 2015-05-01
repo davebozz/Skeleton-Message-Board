@@ -4,16 +4,18 @@
 	<title></title>
 		
 		<meta name="viewport" content="width=device-width, intial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="info_page_style.css"/>
-		<link rel="stylesheet" href="/~dbozentka/csc2210/include/jquery/jquery.mobile-1.4.5.css"/>
-		<link rel="stylesheet" type="text/css" href="front_page_style.css"/>
-		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery-1.11.2.js"> </script>
-		<script type="text/javascript" src="/~dbozentka/csc2210/include/jquery/jquery.mobile-1.4.5.js"> </script>	
+		<link rel="stylesheet" type="text/css" href="css/info_page_style.css"/>
+		<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
+		<link rel="stylesheet" type="text/css" href="css/front_page_style.css"/>
+		<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
+		<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>	
+		<script type="text/javascript" src="js/login.js"></script>
 </head>
-<body>
+<body onload="Session_Check();">
 	<div data-role="page" id="infoPage">
 		<div data-role="header" data-position="fixed">
 		 <h1>Background Information</h1>
+		 <a href="#" id="Logged" class="ui-btn ui-btn-inline ui-btn-right"></a>
 			<div data-role="navbar">
 				<ul>
 					<li>
@@ -22,15 +24,15 @@
 					<li>
 						<a href="info.html"> Info </a>
 					</li>
-					<li>
-						<a href="/index.html/#Login" class="ui-btn ui-btn-inline" data-transition="pop"> Login </a>
+					<li id="Log">
+					
 					</li>
 				</ul>
 			</div>	
 		</div>	
 		<div data-role="content">
 			<div>
-				<h1 id="Our_Team">Our Team</h1>
+				<h1 align="center" id="Our_Team">Our Team</h1>
 				<div id="Creators">
 					<div id="circle_image">
 						<img src="Elvis.jpg"/>
@@ -50,7 +52,7 @@
 			<div id="App_Focus">
 				<h2>The App's Focus</h2>
 				<p>
-					
+
 				</p>
 			</div>
 		</div>

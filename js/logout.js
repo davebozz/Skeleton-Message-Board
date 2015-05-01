@@ -4,7 +4,7 @@ function logout() {
 					or unsuccessful??
 		--
 	*/
-	$.post('php/logout.php',{},
+	$.post('php/logout.php',
 		function(resData){
 			jsonResData = $.parseJSON(resData);
 
@@ -13,6 +13,7 @@ function logout() {
 			console.log(jsonResData.type);
 		
 			if(jsonResData.type == "Success_LogOut"){
+				
 				$("#Log").html("<a href='#Login' class='ui-btn ui-btn-inline' data-transition='pop'> Login </a>");
 				RemoveHeader();
 			}

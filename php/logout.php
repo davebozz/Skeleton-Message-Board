@@ -1,7 +1,10 @@
 <?php
 	require("../../include/utility.php");
 	session_start();
-	if(session_destroy())
+		
+	session_destroy();
+
+	if(1)
 	{
 		$message = array("type"=>"Success_LogOut");
 		$encode = json_encode($message);
