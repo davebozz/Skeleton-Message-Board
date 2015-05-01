@@ -5,8 +5,7 @@
 */
 	$dbconn = connectToDB();
 	session_start();
-	$_SESSION['User_Name'];
-	
+
 	if($_SESSION['User_Name'] == "")
 	{
 		logMsg("No Session Currently Active");
