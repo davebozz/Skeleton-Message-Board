@@ -20,5 +20,5 @@ git pull	      //==-Pull's any files down from github repository(Must be in dire
 			--IF returns Already up-to-date, means that there are not any changes
 =-------------------=
 Merge conflict: When you have made a change to a line that someone else has made a change on(When git pull will udpate)
-
+Hi
 --------------------------------------------------------------------------------------------------------------------------------------------------
