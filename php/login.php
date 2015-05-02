@@ -2,12 +2,13 @@
 require("../../include/utility.php");
 	$dbconn = connectToDB();
 	session_start();
-	$_SESSION['User_Name'];
+
 	/*
 		-Turn this into a function after working.
 		-Clean it up: Could be much more fluid.
 	*/
 	//Check to see if both the Username & Password are set
+
 	if(isset($_POST["User_Name"]) && isset($_POST["User_Pass"]))
 	{
 		$User_Name = cleanInput($_POST['User_Name']);

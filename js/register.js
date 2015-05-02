@@ -10,7 +10,6 @@ function checkForm(form){
 		$("#fname").html("Please enter a name");
 		form.fname.focus();
 		good = false;
-		return false;
 	}
 	
 	if (form.username.value == "")
@@ -18,7 +17,6 @@ function checkForm(form){
 		$("#username").html("Please enter a username");
 		form.username.focus();
 		good = false;
-		return false;
 	} 
 	
 	if(form.lname.value == "") 
@@ -26,7 +24,6 @@ function checkForm(form){
 		$("#lname").html("Please enter a last name");
 		form.lname.focus();
 		good = false;
-		return false;
 	}
 	
 	if(form.email.value == "")
@@ -34,7 +31,6 @@ function checkForm(form){
 		$("#email").html("Please enter an email");
 		form.email.focus();
 		good = false;
-		return false;
 	}
 
 	if(form.password.value == "")
@@ -42,7 +38,6 @@ function checkForm(form){
 		$("#password").html("Please enter a password");
 		form.password.focus();
 		good = false;
-		return false;
 	}
 
 	if(form.checkPassword.value == ""){
@@ -50,7 +45,6 @@ function checkForm(form){
 		$("#checkPassword").html("Please re-enter password");
 		form.password.focus();
 		good = false
-		return false;
 	} 
  
 	if(!passwordCheck.test(form.password.value)){
@@ -58,7 +52,6 @@ function checkForm(form){
 		form.password.value = "";
 		form.password.focus();
 		good = false;
-		return false;
 	}
  
 	if(form.password.value != form.checkPassword.value){
@@ -66,7 +59,6 @@ function checkForm(form){
 		form.checkPassword.value = "";
 		form.password.focus();
 		good = false;
-		return false;
 	}
  
 	if(!emailCheck.test(form.email.value)){
@@ -74,42 +66,57 @@ function checkForm(form){
 		form.email.value = "";
 		form.email.focus();
 		good = false;
-		return false;
-
 	}
+
+	var First_Name = form.fname.value;
+	console.log(First_Name);
+	var Last_Name = form.lname.value;
+	console.log(Last_Name);
+	var User_Name = form.username.value;
+	console.log(User_Name);
+	var Email_Address = form.email.value;
+	console.log(Email_Address);
+	var Passwd = form.password.value; 
+	console.log(Passwd);
 
 	if(good == true){
 		$.post(
-			'php/register.php',
-		{"First_Name":form.fname.value,
-		 "User_Name":form.username.value,
-		 "Last_Name":form.lname.value,
-		 "Email":form.email.value,
-		 "Password":form.password.value},
+		'php/register.php',
+		{"First_Name":First_Name, "Last_Name":Last_Name, "User_Name":User_Name, "Email_Address":Email_Address, "Passwd":Passwd},
 		 	function(resData){
-		 		jsonResData  = $.parseJSON(resData);
+				jsonResData = $.parseJSON(resData);
 
+		 		alert(resData);
 		 		console.log(jsonResData);
 		 		console.log(jsonResData.type);
 
 		 		if(jsonResData.type=="UserName_Used")
 		 		{
-		 			$("#username").html("Username is already in use!");
+		 			$("#Taken_Usr").text("Username is already in use!");
 		 			form.username.value= "";
 		 			form.username.focus();
 		 		}
 
-		 		if(jsonResData.type=="Registered")
-		 		{
-
-		 		}
-
 		 		if(jsonResData.type=="Email_Used")
 		 		{
-		 			$("#email").html("Email is already in use!");
+		 			$("#Taken_Email").text("Email is already in use!");
 		 			form.email.value = "";
 		 			form.email.focus();
+		 		}
+
+		 		if(jsonResData.type=="Both_Used")
+		 		{
+		 			$("#Taken_Email").text("Email is already in use!");
+		 			form.email.value = "";
+		 			form.email.focus();
+
+		 			$("#Taken_Usr").text("Username is already in use!");
+		 			form.username.value= "";
+		 			form.username.focus();
 		 		}
 		 	});
 	}
 }
+
+
+

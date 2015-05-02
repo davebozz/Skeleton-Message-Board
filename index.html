@@ -10,6 +10,7 @@
 		<title> Home Page </title>
 		<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
 		<link rel="stylesheet" type="text/css" href="css/front_page_style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register_page_style.css"/>
 		<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
 		<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>
 		<script type="text/javascript" src="js/login.js"></script>
@@ -18,7 +19,7 @@
 		<script type="text/javascript" src="js/register.js"></script>
 	</head>
 
-	<body onload="Session_Check();">
+	<body>
 		
 	<!--
 		======- - - - Body Starts Here - - - -=======
@@ -30,10 +31,10 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="index.html" class="ui-btn-active"> Home </a>
+							<a href="index.html" class="ui-btn-active" data-ajax="false"> Home </a>
 						</li>
 						<li>
-							<a href="info.html"> Info </a>
+							<a href="info.html" data-ajax="false"> Info </a>
 						</li>
 						
 						<li id="Log" data-ajax="false">
@@ -46,7 +47,7 @@
 					Click On One Of The Discussion Tabs To Read More!
 				</h2>
 				
-				<a href="SubmitTopic.html" id="SubmitBtn" class="ui-btn ui-btn-inline"> 
+				<a href="SubmitTopic.html" id="SubmitBtn" class="ui-btn ui-btn-inline" data-ajax="false"> 
 					Submit Topic
 				</a>
 				
@@ -147,7 +148,7 @@
 		======- - - - Using Form Tags To Send - - - -=======
 			  	   - - - OnClick & OnSubmit - - - 
 	-->
-				<form action="#" method="POST" data-ajax="false" name="login" id="login">
+				<form action="#" method="POST" name="login" id="login">
 					
 				<div data-role="fieldcontain">
 					<label for="UserName"> 

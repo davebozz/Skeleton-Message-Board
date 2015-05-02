@@ -4,6 +4,7 @@
 		<title> Home Page </title>
 		<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
 		<link rel="stylesheet" type="text/css" href="css/front_page_style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register_page_style.css"/>
 		<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
 		<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>
 		<script type="text/javascript" src="js/login.js"></script>
@@ -15,7 +16,7 @@
 	<!--
 		======- - - - Body Starts Here - - - -=======
 	-->
-<body onload="Session_Check();">
+<body>
 	<div data-role="page" id="homePage" class="inactive">
 		<div data-role="header" data-position="fixed">
 			<h1>Welcome To The Basic Message Board</h1>
@@ -23,10 +24,10 @@
 			<div data-role="navbar">
 				<ul>
 					<li>
-						<a href="index.html" class=""> Home </a>
+						<a href="index.html" class="" data-ajax="false"> Home </a>
 					</li>
 					<li>
-						<a href="info.html"> Info </a>
+						<a href="info.html" data-ajax="false"> Info </a>
 					</li>
 					
 					<li id="Log" class="ui-btn-active" data-ajax="false">
@@ -39,18 +40,21 @@
 				<div data-role="fieldcontain">
 					<label for="username">Username:</label>
 					<input type="text" name="username" id="username" value="" />
+					<div id="Taken_Usr" class="_Error"></div>
 				</div>
 				<div data-role="fieldcontain">
 					<label for"fname">First Name:</label>
 					<input type="text" name="fname" id="fname" value="" />
 				</div>
 				<div data-role="fieldcontain">
-					<label for"lname">Last Name:</label>
+					<label for"lname">Last Name:
+					</label>
 					<input type="text" name="lname" id="lname" value="" />
 				</div>
 				<div data-role="fieldcontain">
 					<label for"email">Email:</label>
 					<input type="text" name="email" id="email" value="" />
+					<div id="Taken_Email" class="_Error"></div>
 				</div>
 				<div data-role="fieldcontain">
 					<label for"password">Password:</label>
@@ -60,9 +64,14 @@
 					<label for"checkPassword">Re-enter password:</label>
 					<input type="password" name="checkPassword" id="checkPassword" value="" />
 				</div>
-				<div data-role="fieldcontain">
-					<input type="submit" value="Register!" 
-					onclick="checkForm(document.Register_Form);" />
+				<div data-role="fieldcontain" class="ui-block-c">
+					<div class="ui-btn ui-btn-a ui-shadow ui-btn-corner-all ui-submit">
+					<a href="#">
+						<span class="ui-btn-inner ui-btn-corner-all" onclick="checkForm(document.Register_Form);">
+							Submit	
+						</span>
+					</a>
+					</div>
 				</div>
 			</form>
 		</div>

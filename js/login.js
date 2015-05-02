@@ -1,30 +1,64 @@
 var First= "";
 var Last= "";
 
+$(function(){
+	$.post(
+		'php/session.php',
+		function(resData){
+			jsonResData = $.parseJSON(resData);
+
+			console.log(jsonResData);
+			console.log(jsonResData.type);
+	
+			var Session_Activity = "";
+
+			if(jsonResData.type == "Session_Active")
+			{
+
+				var First = jsonResData.First_Name;
+				var Last = jsonResData.Last_Name;
+			
+				Session_Activity = "Active";
+				console.log(First);
+				console.log(Last);
+
+				returnNames(First, Last);
+			}
+
+			if(jsonResData.type == "Session_Not_Active")
+			{
+				Session_Activity = "Not_Active";
+				$("#Log").html("<a href='#Login' class='ui-btn ui-btn-inline' data-ajax='false' data-transition='pop'>Login</a>");
+				$("#Logged").hide();
+			}
+	});
+});	
+
 function LoginForm(form)
 {
+
 	//Check to see if UserName was entered appropriate
 	if(form.UserName.value==""){
 		var errorText = "Please fill in your UserName.";
 		$('#UserError').text(errorText);
-		return false;
+
 	}
 	else{
 		var errorText ="";
 		$('#UserError').text(errorText);
-		return false;
+
 	}
 
 	//Checks to see if UserPassword was filled out
 	if(form.UserPassword.value==""){
 		var errorText = "Please fill in your Password.";
 		$('#PassError').text(errorText);
-		return false;
+
 	}
 	else{
 		var errorText ="";
 		$('#PassError').text(errorText);
-		return false;
+
 	}
 
 	var UserPassword = form.UserPassword.value;
@@ -86,35 +120,6 @@ function LoginForm(form)
 				}
 		});
 	}
-}
-
-function Session_Check()
-{
-	$.post(
-		'php/session.php',
-		function(resData){
-			jsonResData = $.parseJSON(resData);
-
-			console.log(jsonResData);
-			console.log(jsonResData.type);
-	
-			if(jsonResData.type == "Session_Active")
-			{
-				var First = jsonResData.First_Name;
-				var Last = jsonResData.Last_Name;
-			
-				console.log(First);
-				console.log(Last);
-
-				returnNames(First, Last);
-			}
-
-			if(jsonResData.type == "Session_Not_Active")
-			{
-				$("#Log").html("<a href='#Login' class='ui-btn ui-btn-inline' data-ajax='false' data-transition='pop'>Login</a>");
-				$("#Logged").hide();
-			}
-		});
 }
 
 function returnNames(First, Last)
