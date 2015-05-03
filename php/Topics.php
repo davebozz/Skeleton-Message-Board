@@ -25,9 +25,10 @@
 				BlankUser();
 			}
 			else
-			{
+			{				
 				//If Username is not empty, store in DB Return successful
 				NotBlankUser($User_Name, $ParagraphTitle, $Paragraph);
+
 			}
 		} 
 		else

@@ -9,8 +9,6 @@ $(function(){
 
 			console.log(jsonResData);
 			console.log(jsonResData.type);
-	
-			var Session_Activity = "";
 
 			if(jsonResData.type == "Session_Active")
 			{
@@ -18,7 +16,6 @@ $(function(){
 				var First = jsonResData.First_Name;
 				var Last = jsonResData.Last_Name;
 			
-				Session_Activity = "Active";
 				console.log(First);
 				console.log(Last);
 
@@ -27,12 +24,11 @@ $(function(){
 
 			if(jsonResData.type == "Session_Not_Active")
 			{
-				Session_Activity = "Not_Active";
 				$("#Log").html("<a href='#Login' class='ui-btn ui-btn-inline' data-ajax='false' data-transition='pop'>Login</a>");
 				$("#Logged").hide();
 			}
 	});
-});	
+});
 
 function LoginForm(form)
 {
