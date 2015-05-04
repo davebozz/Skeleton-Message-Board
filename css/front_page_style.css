@@ -66,3 +66,11 @@ div#PassError {
 {
     background-image: none;
 }
+
+.Desc_One,
+.Desc_Two,
+.Desc_Three,
+.Desc_Four 
+{
+	overflow: hidden;
+}

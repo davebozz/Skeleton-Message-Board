@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
 		<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>	
 		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/logout.js"></script>
 </head>
 <body>
 	<div data-role="page" id="infoPage">
@@ -57,6 +58,80 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="Login" data-role="dialog" class="ui-btn-contain ui-overlay-a ui-corner-all ui-dialog" data-url="Login">
+			<div data-role="header">
+				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" data-rel="back"> Close </a>
+				<h1 class="ui-title" data-role="heading">Login Form</h1>
+			</div>
+			<div data-role="content">
+				<h1> Please Sign In Below </h1>
+				<p>
+					Don't have an account? </br>Feel free to create one 
+						<a href="register.html">here</a>! 
+				</p>
+				
+	<!--
+		======- - - - Using Form Tags To Send - - - -=======
+			  	   - - - OnClick & OnSubmit - - - 
+	-->
+				<form action="#" method="POST" name="login" id="login">
+					
+				<div data-role="fieldcontain">
+					<label for="UserName"> 
+						Username:
+					</label>
+					<input type="text" name="UserName" id="UserName" data-mini="true"/>
+					
+					<!--
+						-Adding a alert box that is more subtle JS CALL 
+						-It will add text based on message
+					-->
+					<div id="UserError"> </div>
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="UserPassword"> 
+						Password:
+					</label>
+					<input type="password" name="UserPassword" id="UserPassword" data-mini="true"/>
+					<!--
+						-Adding a alert box that is more subtle JS CALL 
+						-It will add text based on message
+					-->
+					<div id="PassError"> </div>
+				</div>
+					
+					<label for="Stay-Logged-In">Check To Stay Logged In</label>
+					<input type="checkbox" name="Stay-Logged-In" id="Stay-Logged-In" />
+				
+					<fieldset>
+						<div class="ui-block-a">
+							<div class="ui-btn ui-btn-a ui-shadow ui-btn-corner-all ui-submit">
+								<a href="#" >
+									<span class="ui-btn-inner ui-btn-corner-all">
+										<span id="SubmitBtn" class="ui-btn-text" onclick="LoginForm(document.login);">
+											Submit
+										</span>
+									</span>
+								</a>
+							</div>
+						</div>
+						<div class="ui-block-b">
+							<div class="ui-btn ui-btn-b ui-shadow ui-btn-corner-all ui-submit">
+								<span class="ui-btn-inner ui-btn-corner-all">
+									<a href="#" data-rel="back">
+										<span class="ui-btn-text">
+											Cancel
+										</span>
+									</a>
+								</span>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
 
 </body>
 </html>

@@ -69,7 +69,6 @@ function NotBlankUser($UserName, $Title, $Paragraph)
 	$dbconn = connectToDB();
 
 	$query = "SELECT * FROM Users WHERE Username = '$UserName';";
-	logMsg($query);
 	
 	if(!($result = $dbconn->query($query))){
 		logMsg("The UserName Query didn't work! #BadSession");
@@ -81,6 +80,9 @@ function NotBlankUser($UserName, $Title, $Paragraph)
 	$Last_Name = $myrow['Last_Name'];
 
 	$AddQuery = "INSERT INTO TopicTable (Topic_ID, Title, Paragraph, UserID) VALUES (NULL,'$Title','$Paragraph','$UserID');";
+	if(!($result = $dbconn->query($AddQuery))){
+		logMsg("Didn't DataBase Make it");
+	}
 
 	SendBack($First_Name,$Last_Name);
 

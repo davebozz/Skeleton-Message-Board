@@ -18,6 +18,7 @@
 		<script type="text/javascript" src="js/JsTopicSubmit.js"></script>
 		<script type="text/javascript" src="js/register.js"></script>
 		<script type="text/javascript" src="js/newPage.js"></script>
+		<script type="text/javascript" src="js/tmp.js"></script>
 	</head>
 
 	<body>
@@ -25,8 +26,8 @@
 	<!--
 		======- - - - Body Starts Here - - - -=======
 	-->
-		<div data-role="page" id="homePage" class="inactive">
-			<div data-role="header" data-position="fixed">
+		<div data-role="page" id="homePage">
+			<div data-role="header" >
 				<h1>Welcome To The Basic Message Board</h1>
 				<a href="#" id="Logged" class="ui-btn ui-btn-inline ui-btn-right"></a>
 				<div data-role="navbar">
@@ -62,7 +63,7 @@
 							<div class="ui-btn-inner ui-li ui-li-has-alt">
 								<div class="ui-btn-text">
 									<a href="#" class="ui-link-inherit"> 
-										<h3 class="ui-li-heading" id="Title_H_One">
+										<h3 class="ui-li-heading" id="Title_H_One" data-ajax="false">
 											Title Of Discussion Goes Here
 										</h3>
 										<p class="ui-li-desc" id="Desc_One">
@@ -133,7 +134,7 @@
 		======- - - - Dialog Login Box Starts - - - -=======
 			  - - - text text text text text - - - 
 	-->
-		<div id="Login" data-role="dialog" class="ui-btn-contain ui-overlay-a ui-corner-all ui-dialog">
+		<div id="Login" data-role="dialog" class="ui-btn-contain ui-overlay-a ui-corner-all ui-dialog" data-url="Login">
 			<div data-role="header">
 				<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext ui-btn-left" data-rel="back"> Close </a>
 				<h1 class="ui-title" data-role="heading">Login Form</h1>

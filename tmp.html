@@ -1,106 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Topic Submission </title>
-	<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
-	<link rel="stylesheet" type="text/css" href="css/front_page_style.css"/>
-	
-	<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
-	
-	<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>
-	
-	<script type="text/javascript" src="js/login.js"></script>
-	
-	<script type="text/javascript" src="js/logout.js"></script>
-	
-	<script type="text/javascript" src="js/JsTopicSubmit.js">
-	</script>
-
+		<title id="Page_Title">  </title>
+		<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
+		<link rel="stylesheet" type="text/css" href="css/front_page_style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register_page_style.css"/>
+		<script type="text/javascript" src="../include/jquery/jquery-1.11.2.js"> </script>
+		<script type="text/javascript" src="../include/jquery/jquery.mobile-1.4.5.js"> </script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/logout.js"></script>
+		<script type="text/javascript" src="js/TopicReturn.js"></script>
 </head>
 <body>
-<!--
-	======- - - - Body Starts Here - - - -=======
--->
 	<div data-role="page">
-<!--
-	======- - - - Navigation Bar Here - - - -=======
--->
+		<!--
+			============= Header Of Page Navigation Bar ===============
+		-->
 		<div data-role="header" data-position="fixed">
-			<h1>Topic Submission</h1>
-			<a href="#" id="Logged" class="ui-btn ui-btn-inline ui-btn-right">		
-			</a>
+			<h1>Basic Message Board Topic</h1>
+			<a href="#" id="Logged" class="ui-btn ui-btn-inline ui-btn-right"></a>
 			<div data-role="navbar">
 				<ul>
 					<li>
 						<a href="index.html" class="ui-btn-active" data-ajax="false"> Home </a>
 					</li>
-					
 					<li>
 						<a href="info.html" data-ajax="false"> Info </a>
 					</li>
-					
+						
 					<li id="Log" data-ajax="false">
 					</li>
 				</ul>
 			</div>
 		</div>
-<!--
-	======- - - - Navigation Bar Ends Here - - - -=======
--->
+
 		<div data-role="content">
-			<!-- This of a better word then input -->
-			<h3 align="center">Fill Out The Below Inputs</h3>
-<!--
-	======- - - - Submission Form Begins Here - - - -=======
-	-ID for form: Form_Topic_Submit
-	-ID for title: Title
-	-ID for text box: Paragraph
--->			
-			<div>
-				<form action="#" method="POST" data-ajax="false" name="Form_Topic_Submit" id="Form_Topic_Submit">
-
-<!--		==========-Title Description-======== 			-->
-					<div data-role="fieldcontain">
-						<label for="Title">
-							Title:
-						</label>
-						<input type="text" name="Title" id="Title"/>
-						<span id="TitleError"></span>
-					</div>
-
-<!--	       
-			========-Paragraph Description-========
-				 ****Better UI Development**** 			
--->
-					<div data-role="fieldcontain">
-						<label for="Paragraph">
-							Summary:
-						</label>
-						<textarea cols="40" rows="8" name="Paragraph" id="Paragraph" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
-
-						</textarea> 
-					</div>
-<!-- 
-		-Add a sorting aspect later on,
-		-This could include: Categories/Archies/Comments/User Posts etc...
--->
-<!--	       
-			========-Submit Text-======== 	
-			-onclick ="SubmitForm(document.Form_Topic_Submit);"
-				-^: Link to JS SubmitForm tag		
--->
-					<div class="ui-block-c">
-						<div class="ui-btn ui-btn-a ui-shadow ui-btn-corner-all ui-submit">
-							<a href="#">
-								<span class="ui-btn-inner ui-btn-corner-all" onclick="SubmitForm(document.Form_Topic_Submit);">
-									Submit	
-								</span>
-							</a>	
-						</div>
-					</div>
-				</form>
+			<div id="Article_Title">
+				
 			</div>
+			<div id="Desc_Info">
+				
+			</div>
+			<div>
+				
+			</div>
+
 		</div>
+
 	</div>
 
 	<div id="Login" data-role="dialog" class="ui-btn-contain ui-overlay-a ui-corner-all ui-dialog" data-url="Login">
@@ -176,6 +122,7 @@
 				</form>
 			</div>
 		</div>
+
 
 </body>
 </html>

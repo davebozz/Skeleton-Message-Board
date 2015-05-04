@@ -49,7 +49,8 @@ function SubmitForm(form){
 			{"Paragraph":form.Paragraph.value,"Title":form.Title.value},
 			function(resData){
 				jsonResData = $.parseJSON(resData);
-
+				
+				console.log(jsonResData.type);
 				console.log(jsonResData);
 
 				if(jsonResData.type == "Not_Logged_In")

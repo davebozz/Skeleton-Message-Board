@@ -114,6 +114,11 @@ function checkForm(form){
 		 			form.username.value= "";
 		 			form.username.focus();
 		 		}
+
+		 		if(jsonResData.type=="Stored")
+		 		{
+		 			document.location.href="index.html";	
+		 		}
 		 	});
 	}
 }

@@ -11,6 +11,7 @@ require("../../include/utility.php");
 	while($myrow = $result->fetch_array()){
 		$Title_Array[] = $myrow['Title'];
 		$Paragraph_Array[] = $myrow['Paragraph'];
+		$ID_Array[] = $myrow['Topic_ID'];
 	}
 
 	if(isset($Title_Array[0]) && isset($Title_Array[1]) && isset($Title_Array[2]) && isset($Title_Array[3])){
@@ -18,7 +19,9 @@ require("../../include/utility.php");
 						 "Title_One"=>$Title_Array[0], "Title_Two"=>$Title_Array[1], 
 						 "Title_Three"=>$Title_Array[2],"Title_Four"=>$Title_Array[3],"Paragraph_One"=>$Paragraph_Array[0],
 						 "Paragraph_Two"=>$Paragraph_Array[1],"Paragraph_Three"=>$Paragraph_Array[2],
-						 "Paragraph_Four"=>$Paragraph_Array[3]);
+						 "Paragraph_Four"=>$Paragraph_Array[3], 
+						 "One_ID"=>$ID_Array[0], "Two_ID"=>$ID_Array[1],
+						 "Three_ID"=>$ID_Array[2],"Four_ID"=>$ID_Array[3]);
 		$encode = json_encode($message);
 		echo $encode;
 	}

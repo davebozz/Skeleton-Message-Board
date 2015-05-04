@@ -1,5 +1,6 @@
 <?php
 require("../../include/utility.php");
+require("../../include/password.php");
 	$dbconn = connectToDB();
 	session_start();
 
@@ -19,7 +20,6 @@ require("../../include/utility.php");
 
 		//Remove after debug
 		logMsg($User_Name);
-		logMsg($User_Pass);
 
 		$query = "SELECT * FROM Users WHERE Username = '$User_Name';";
 
@@ -42,8 +42,9 @@ require("../../include/utility.php");
 
 			//Get my row and compare
 			$myrow = $result->fetch_array();
+			$hash = $myrow['Password'];
 
-			if($myrow['Password'] == $User_Pass)
+			if(password_verify($User_Pass,$hash))
 			{
 				/*
 					==-If Password & Username are both correct

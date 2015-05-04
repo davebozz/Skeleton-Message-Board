@@ -1,6 +1,6 @@
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0%;
+	padding: 0%;
 }
 
 #Our_Team {
@@ -10,9 +10,9 @@ body {
 }
 
 .image {
-	width: 75px;
-	height: 75px;
-	border-radius: 300px;
+	width: 10%;
+	height: 10%;
+	border-radius: 30%;
 	background: url(Elvis.jpg) no-repeat;
 	background-position: 75% 20%;
 
@@ -34,8 +34,8 @@ body {
 img {
  	border-radius: 50%;
     overflow: hidden;
-    width: 150px;
-    height: 150px;
+    width: 15%;
+    height: 15%;
 }
 
 #App_Focus {

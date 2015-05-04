@@ -1,5 +1,6 @@
 <?php
 require("../../include/utility.php");
+require("../../include/password.php");
 
 	$dbconn = connectToDB();
 	session_start();
@@ -20,6 +21,8 @@ require("../../include/utility.php");
   		$email = $dbconn->real_escape_string($email);
   		$password = $dbconn->real_escape_string($password);
   		
+  		$hash = password_hash($password, PASSWORD_BCRYPT);
+
   		/*
   			-=Check to see if email or username is already used
   			=-If it is, then send JSON back and have user re-register 
@@ -60,6 +63,10 @@ require("../../include/utility.php");
 			echo $encode; 
 		}
 		elseif($Used_Email != "" && $Used_Usr == ""){
+			//Because of my if statement set, I had to re-do both 
+			//If statements in order for it to not echo 
+			//two different encode statements. Casual little hack
+			//Fix Later.
 			echo $Email_Encode;
 		}
 		elseif($Used_Email == "" && $Used_Usr != ""){
@@ -70,7 +77,7 @@ require("../../include/utility.php");
   		if($Used_Email == "" && $Used_Usr == "")
   		{
   		
-	  		$query = "INSERT INTO Users (ID, First_Name, Last_Name, Username, Email, Password) VALUES (NULL,'$fname','$lname','$username','$email','$password')";
+	  		$query = "INSERT INTO Users (ID, First_Name, Last_Name, Username, Email, Password) VALUES (NULL,'$fname','$lname','$username','$email','$hash')";
 	  		
 	  		if(!($result = $dbconn->query($query)))
 	  		{
@@ -81,6 +88,11 @@ require("../../include/utility.php");
 	  		$_SESSION['User_Name']=$username;
 	  		$_SESSION['First_Name']=$fname;
 	  		$_SESSION['Last_Name']=$lname;
+
+	  		$message = array("type"=>"Stored");
+	  		$encode = json_encode($message);
+	  		echo $encode;
   		}
 	}
+disconnectDB($dbconn);
 ?>
