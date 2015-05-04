@@ -67,7 +67,7 @@ require("../../include/password.php");
 			//If statements in order for it to not echo 
 			//two different encode statements. Casual little hack
 			//Fix Later.
-			echo $Email_Encode;
+			echo $Email_encode;
 		}
 		elseif($Used_Email == "" && $Used_Usr != ""){
 			echo $Usr_encode;

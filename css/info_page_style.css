@@ -13,7 +13,7 @@ body {
 	width: 10%;
 	height: 10%;
 	border-radius: 30%;
-	background: url() no-repeat;
+	background-image: url("general_icon.png") no-repeat;
 	background-position: 75% 20%;
 
 	}

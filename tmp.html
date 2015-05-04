@@ -7,6 +7,18 @@
 	Usage: The usage of tmp.html is a temporary file for 		   the topic submission registration. When the 			   user clicks on a topic on index.html they the 		   database is queried and using TopicReturn.js 		   the title/paragraph/comments are injected into 		   tmp.html and displayed. The user who clicked on 		   it can also comment and add information. 
 -->
 <html>
+ <style>
+    #Article_Title {
+    	margin-left: auto;
+    	margin-right: auto;
+    	width: 50%;
+    }
+    #Paragraph_Style{
+    	margin-left: auto;
+    	margin-right: auto;
+    	width: 50%;
+    }
+  </style>
 <head>
 		<title id="Page_Title">  </title>
 		<link rel="stylesheet" href="../include/jquery/jquery.mobile-1.4.5.css"/>
@@ -42,11 +54,11 @@
 		</div>
 
 		<div data-role="content">
-			<div id="Article_Title">
-				
-			</div>
-			<div id="Desc_Info">
-				
+			<div>
+				<div id="Article_Title"> </div>
+					<div id="Paragraph_Style" class="ui-body ui-body-a ui-corner-all">
+						<div id="Desc_Info"></div>
+					</div>
 			</div>
 			<div>
 				
@@ -129,7 +141,5 @@
 				</form>
 			</div>
 		</div>
-
-
 </body>
 </html>

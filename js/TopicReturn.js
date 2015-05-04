@@ -28,15 +28,15 @@ $(function(){
 
 				var Paragraph = jsonResData.Paragraph;
 
-				$("#Article_Title").html("<div data-ajax='false'>"+Title+"</div>");
+				$("#Article_Title").html("<h3 data-ajax='false' class='ui-bar ui-bar-a ui-corner-all' align='center'>"+Title+"</h3>");
 				$("#Desc_Info").html("<div data-ajax='false'>"+Paragraph+"</div>");
 			}
 
 			if(jsonResData.type == "Only_Title"){
 				var Title = jsonResData.Title;
 
-				$("#Article_Title").html("<div data-ajax='false'>"+Title+"</div>");
-				$("#Desc_Info").html("<div data-ajax='false'>"+Paragraph+"</div>");
+				$("#Article_Title").html("<h3 data-ajax='false' class=''ui-bar ui-bar-a ui-corner-all' align='center'>"+Title+"</h3>");
+				$("#Desc_Info").html("<p data-ajax='false'>"+Paragraph+"</p>");
 			}
 	});
 });
