@@ -1,3 +1,17 @@
+/*
+	Name: D.J. Bozentka & Austin Canada
+	Date: May 4th, 2015
+	Class: CSC-2210
+	Location: dbozentka/public_html/csc2210/Skeleton-Message-Board/js/login.js
+	Usage: The file is used for logins, when the user logins on any page, 
+		   it will call check when the page is loaded if there is a session
+		   active or not, if it is not it will continue to display the login
+		   button, if not it will display the user who is logged in name and 
+		   a logout button where the login button is. This is what returnNames
+		   function is used for dependent on what the is JSON encoded back. 
+		   Injects the html on the id #log on all pages, which will call the multipage
+		   dialog box.
+*/
 var First= "";
 var Last= "";
 

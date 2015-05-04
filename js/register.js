@@ -1,3 +1,15 @@
+/*
+	Name: D.J. Bozentka & Austin Canada
+	Date: May 4th, 2015
+	Class: CSC-2210
+	Location: dbozentka/public_html/csc2210/Skeleton-Message-Board/js/register.js
+	Usage: The file used when the user is trying to log in via the login file on 
+		   login.js, if they click the "Here" it will direct them to the register.html 
+		   file, whch if they enter all the information correctly, will register them a 
+		   user name. The password is hashed, and must be a length of six characters.
+		   If they enter and are registered, it will return them to the main page and log them in.
+*/
+
 function checkForm(form){
 	var passwordCheck = new RegExp(/^.{6,}$/);
 	var emailCheck = new RegExp(/(?!.*([\_\-\.][\_\-\.]+))(?!.*(\.\.+))^([a-zA-Z][\w\-\d\.]*)@([a-zA-Z][a-zA-Z\d\-\.]*|[a-zA-Z])\.[a-zA-Z]+$/);

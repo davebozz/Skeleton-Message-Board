@@ -1,3 +1,18 @@
+/*
+	Name: D.J. Bozentka & Austin Canada
+	Date: May 4th, 2015
+	Class: CSC-2210
+	Location: dbozentka/public_html/csc2210/Skeleton-Message-Board/js/newPage.js
+	Usage: The file used when index.html page is ready() or loaded up,
+		   if it is, then it will load all the topics and the paragraphs associated with it
+		   to the index screen that a user can click on. This occurs with a message sent via AJAX
+		   to the newPage.php script which queries the DB and returns the latest 4 entered paragraphs. 
+		   It then injects the four into the the four items list via HTML injection.
+	-The reason we have it also return the ID number is to access it directly when a user clicks on 
+		that specific topic to a page with that topic and paragraph associated with it in an html file with
+		comments. 
+*/
+
 $(function(){
 	$.post(
 		'php/newPage.php',

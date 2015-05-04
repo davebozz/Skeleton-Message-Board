@@ -1,4 +1,15 @@
 /*
+	Name: D.J. Bozentka & Austin Canada
+	Date: May 4th, 2015
+	Class: CSC-2210
+	Location: dbozentka/public_html/csc2210/Skeleton-Message-Board/js/JsTopicSubmit.js
+	Usage: The file used is when a user enters information on the 
+		   SubmitTopic.html page, it will send the data if is inputted
+		   corrected, via AJAX to the Topics.php file which will store the 
+		   topic in the database and the user who stored it.
+*/
+
+/*
 	=---JS File to submit topics
 	=----Retrives Topic/Paragraph via GET from HTML 
 	=--Passes it to PHP, which stores it in DB
